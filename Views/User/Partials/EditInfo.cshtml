@@ -1,0 +1,24 @@
+<h2>Edit Information</h2>
+@model User_Dashboard.Models.EditInfoViewModel
+<form asp-controller="User" asp-action="EditInfo" method="POST">
+    @if (ViewBag.Messages != null)
+    {
+        <p>@ViewBag.Messages</p>
+    }
+    <div class="form-group">
+        <span asp-validation-for="Email"></span>
+        <label asp-for="Email">Email Address:</label>
+        <input class="form-control" asp-for="Email">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="FirstName"></span>
+        <label asp-for="FirstName">First name:</label>
+        <input class="form-control" asp-for="FirstName">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="LastName"></span>
+        <label asp-for="LastName">Last name:</label>
+        <input class="form-control" asp-for="LastName">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

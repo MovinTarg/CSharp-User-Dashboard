@@ -1,0 +1,10 @@
+<h2>Edit Description</h2>
+@model User_Dashboard.Models.User
+<form asp-controller="User" asp-action="EditDescription" method="POST">
+    <div class="form-group">
+        <span asp-validation-for="Description"></span>
+        <label asp-for="Description">Description:</label>
+        <input class="form-control" asp-for="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
