@@ -11,9 +11,9 @@ namespace User_Dashboard.Models
         [Required]
         [Display(Name = "Message Text")]
         public string MessageText { get; set; }
-        public int UserId { get; set; }
+        public int MessagePosterUserId { get; set; }
         public User MessagePoster { get; set; }
-        public int ProfileId { get; set; }
+        public int ProfileMessagedUserId { get; set; }
         public User ProfileMessaged { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Profile";
+}
+@model User_Dashboard.Models.Message
+<h1>@ViewBag.showUser.FirstName @ViewBag.showUser.LastName</h1>
+<h4>Registered at: @ViewBag.showUser.CreatedAt</h4>
+<h4>User Id: @ViewBag.showUser.UserId</h4>
+<h4>Email Address: @ViewBag.showUser.Email</h4>
+<h4>Description: @ViewBag.showUser.Description</h4>
+@if(ViewBag.showUser.UserId == ViewBag.ActiveUserId)
+{
+   <h4><a href="/edit/@ViewBag.ActiveUserId">Edit Your Profile</a></h4>
+}
+<h1>Leave a Message for @ViewBag.showUser.FirstName</h1>
+<form asp-controller="User" asp-action="Message" method='POST'>
+    <input type="hidden" name="ProfileId" value="@ViewBag.showUser.UserId">
+    <div class="form-group">
+        <span asp-validation-for="MessageText"></span>
+        <input class="form-control" type="textarea" asp-for="MessageText">
+    </div>
+    <button type="submit" class="btn btn-primary">Post a message</button>
+</form>
+<div class="message_board">
+    @{
+        @if (ViewBag.Messages != null)
+        {
+            <p>@ViewBag.Messages</p>
+        }
+        foreach (var message in ViewBag.showMessages)
+        {
+            <h4>@message.MessagePoster.FirstName @message.MessagePoster.LastName - @message.CreatedAt</h4>
+            <p>@message.MessageText</p>
+            @if(message.MessagePosterUserId == ViewBag.ActiveUserId)
+            {
+                <form action="/Message/@message.MessageId/Delete/@ViewBag.showUser.UserId" method="POST">
+                    <button type="submit" class="btn btn-primary">Remove</button>
+                </form>
+            }
+            @foreach (var comment in message.MessageComments)
+            {
+                <h4 class="comment">@comment.CommentPoster.FirstName @comment.CommentPoster.LastName - @comment.CreatedAt</h4>
+                <p class="comment">@comment.CommentText</p>
+                @if(comment.UserId == ViewBag.ActiveUserId)
+                {
+                    <form action="/Comment/@comment.CommentId/Delete/@ViewBag.showUser.UserId" method="POST">
+                        <button type="submit" class="btn btn-primary">Remove</button>
+                    </form>
+                }
+            }
+            <form asp-controller="User" asp-action="Comment" method='POST'>
+                <input type="hidden" name="MessageId" value="@message.MessageId">
+                <input type="hidden" name="ProfileId" value="@ViewBag.showUser.UserId">
+                <div class="form-group">
+                    <input class="form-control" type="textarea" name='CommentText'>
+                </div>
+                <button type="submit" class="btn btn-primary">Post a comment</button>
+            </form>
+        }
+    }
+</div>

@@ -1,13 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "New User Page";
 }
 @model User_Dashboard.Models.Register
-<h1>Register</h1>
-<form asp-controller="User" asp-action="Register" method="POST">
+<h1>Add a new user</h1>
+<form asp-controller="User" asp-action="Create" method="POST">
     @if (ViewBag.Messages != null)
-    {
-        <p>@ViewBag.Messages</p>
-    }
+  {
+      <p>@ViewBag.Messages</p>
+  }
   <div class="form-group">
     <span asp-validation-for="Email"></span>
     <label asp-for="Email">Email Address:</label>
@@ -33,6 +33,5 @@
     <label asp-for="ConfirmPassword">Confirm Password:</label>
     <input type="password" class="form-control" asp-for="ConfirmPassword">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Create</button>
 </form>
-<p><a href="/signin">Already have an account? Login.</a></p>

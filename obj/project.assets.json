@@ -13350,11 +13350,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Pete\\Desktop\\DojoAssignments\\netCore\\orms\\Belt Prep\\User Dashboard\\User Dashboard.csproj",
+      "projectUniqueName": "C:\\Users\\Pete\\Desktop\\DojoAssignments\\netCore\\orms\\Belt Prep\\User Dashboard\\User Dashboard.csproj",
       "projectName": "User Dashboard",
-      "projectPath": "c:\\Users\\Pete\\Desktop\\DojoAssignments\\netCore\\orms\\Belt Prep\\User Dashboard\\User Dashboard.csproj",
+      "projectPath": "C:\\Users\\Pete\\Desktop\\DojoAssignments\\netCore\\orms\\Belt Prep\\User Dashboard\\User Dashboard.csproj",
       "packagesPath": "C:\\Users\\Pete\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Pete\\Desktop\\DojoAssignments\\netCore\\orms\\Belt Prep\\User Dashboard\\obj\\",
+      "outputPath": "C:\\Users\\Pete\\Desktop\\DojoAssignments\\netCore\\orms\\Belt Prep\\User Dashboard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

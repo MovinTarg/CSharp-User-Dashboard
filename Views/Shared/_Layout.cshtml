@@ -30,9 +30,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Message" asp-action="Dashboard">Dashboard</a></li>
-                    <li><a asp-area="" asp-controller="Message" asp-action="Profile">Profile</a></li>
-                    <li><a asp-area="" asp-controller="User" asp-action="Index">Log Off</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/users/show/@ViewBag.ActiveUserId">Profile</a></li>
+                    <li><a href="/">Log Off</a></li>
                 </ul>
             </div>
         </div>
